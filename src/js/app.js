@@ -35,10 +35,15 @@ async function getSingleMonster() {
         <p>Examine Text: ${data.examine}</p>
         <p>Category: ${data.category}</p>
         <button id="fightBtn">Fight</button>
-        <button id="editBtn">Edit</button>
-        <button id="deleteBtn">Delete</button>
+        <button id="editBtn" class="hidden">Edit</button>
+        <button id="deleteBtn" class="hidden">Delete</button>
     `;
+    const editBtn = document.querySelector("#editBtn");
     const deleteBtn = document.querySelector("#deleteBtn");
+    if(loggedOn()) {
+        editBtn.classList.remove("hidden");
+        deleteBtn.classList.remove("hidden");
+    }
     deleteBtn.addEventListener("click", () => {
         if (confirm("Are you sure you want to delete this monster?")) {
             deleteMonster();
