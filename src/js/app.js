@@ -38,20 +38,30 @@ async function getSingleMonster() {
         <button id="editBtn">Edit</button>
         <button id="deleteBtn">Delete</button>
     `;
+    const deleteBtn = document.querySelector("#deleteBtn");
+    deleteBtn.addEventListener("click", () => {
+        if (confirm("Are you sure you want to delete this monster?")) {
+            deleteMonster();
+        }
+    });
 }
 
-function deleteMonster() {
+async function deleteMonster() {
     const url = window.location.href;
     const id = url.split("/").pop();
     try {
-        fetch(APIBASE + `/api/monster/${id}`, {
+        const res = await fetch(APIBASE + `/api/monster/${id}`, {
             method: "DELETE",
         });
+
+        if (!res.ok) {
+            throw new Error("Failed to delete monster.");
+        }
+
         alert("Monster Deleted Successfully!");
         window.location.href = "/";
     } catch(error) {
-        console.error(error);
-        alert("Error: ", error.message);
+        alert("Error! \nCould not delete monster.");
     }
 }
 
