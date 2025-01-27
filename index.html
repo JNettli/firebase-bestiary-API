@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./src/js/app.js" type="module"></script>
+    <link rel="stylesheet" href="./src/css/styles.css" type="text/css">
+    <title>Testing</title>
+</head>
+<body>
+    <div class="top-of-page">    
+        <h1>Welcome to the Bestiary!</h1>
+        <h2>Here you can browse all the monsters in the bestiary and see what kind of loot you can get from defeating them!</h2>
+        <p>Maybe also fight them idk?</p>
+        <div>
+            <a href="/src/create/monster">Create New Monster!</a>
+            <a href="/src/create/item">Create New Item!</a>
+            <a href="/src/auth/register"><button id="registerBtn">Register!</button></a>
+            <a href="/src/auth/login"><button id="loginBtn">Login!</button></a>
+            <button id="logout" class="hidden">Logout!</button>
+        </div>
+    </div>
+    <div class="bottom-three">
+        <div id="loot-tracker"></div>
+        <div id="fight-screen"></div>
+        <div id="bestiary">
+            <div id="monster-info"></div>
+            <div id="monster-box"></div>
+        </div>
+    </div>
+</body>
+</html>
