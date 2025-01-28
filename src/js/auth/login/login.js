@@ -27,7 +27,6 @@ async function login() {
         window.location.href= "/";
     } catch (error) {
         alert("Could not login. \nIncorrect username or password.");
-        console.error(error);
     }
 }
 

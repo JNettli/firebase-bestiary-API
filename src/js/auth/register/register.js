@@ -20,9 +20,8 @@ async function register() {
         const data = await res.json();
         alert(data.message);
         window.location.href = "/";
-        console.log(data.message);
     } catch (error) {
-        console.error("Error during registration:", error);
+        alert("Error: ", error.message);
     }
 }
 

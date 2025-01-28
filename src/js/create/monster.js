@@ -27,7 +27,6 @@ async function createMonster() {
         alert("Monster Created Successfully!");
         form.reset();
     } catch(error) {
-        console.error(error);
         alert("Error: ", error.message);
     }
 }
